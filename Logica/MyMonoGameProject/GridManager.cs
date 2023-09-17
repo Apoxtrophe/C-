@@ -25,5 +25,12 @@ public class GridManager {
                 spriteBatch.Draw(_cellTexture, position, null, color, 0f, Vector2.Zero, new Vector2(Global.CellSize, Global.CellSize), SpriteEffects.None, 0f);
             }
         }
+
+        for (int y = 0; y <= Global.WorldRows; y++) {
+            spriteBatch.Draw(_cellTexture, new Rectangle(0, y * Global.CellSize, Global.WorldCols * Global.CellSize, 1), Color.Black);
+        }
+        for (int x = 0; x <= Global.WorldCols; x++) {
+        spriteBatch.Draw(_cellTexture, new Rectangle(x * Global.CellSize, 0, 1, Global.WorldRows * Global.CellSize), Color.Black);
+        }
     }
 }
